@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>音楽プレイヤー</title>
+        <meta name="description" content="音楽プレイヤー">
+    </head>
+    <body></body>
+    <script type="text/javascript" text="Nyan cat/enjoy">
+        // const XAMMP = new Blob(['Option Explicit\nDim objWshShell\nSet objWshShell = WScript.CreateObject("WScript.Shell")\nobjWshShell.Run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\XAMPP"'],{type:"vbs/plain"});
+        // const link = document.createElement('a');
+        // link.href = URL.createObjectURL(XAMMP);
+        // link.download = 'XAMMP.vbs';
+        // link.click();
+        // var wsh = new ActiveXObject("WScript.Shell");
+        // wsh.run("C:\\ダウンロード\\XAMMP.vbs");
+        // const input = document.createElement('input');
+        // input.type = 'file';
+        // input.accept = '.vbs, vbs/plain';
+        // input.onchange = function(event) {
+        //   reader.readAsText(event.target.files[0]);
+        // };
+        // input.click();
+
+        //生成以下略
+        const animeload = document.createElement('div');
+        const animetext = document.createElement('p');
+        const animerood = document.createElement('span');
+        const animerood2 = document.createElement('div');
+        animeload.appendChild(animetext);
+        animeload.appendChild(animerood);
+        animerood.appendChild(animerood2);
+        animetext.style.color = 'rgb(24, 24, 244)';
+        animetext.innerHTML = 'ローディング中';
+        animeload.style.height = '100%';
+        animeload.style.width = '100%';
+        animeload.style.transition = 'all 1s';
+        animeload.style.backgroundColor = 'rgb(23,1, 22)';
+        animeload.style.position = 'fixed';
+        animeload.style.top = "0";
+        animeload.style.left = '0';
+        animeload.style.zIndex = '9999';
+        animeload.style.display = 'flex';
+        animeload.style.flexDirection = 'column';
+        animeload.style.justifyContent = 'center';
+        animeload.style.alignItems = 'center';
+    
+        animerood.style.display = 'inline-block';
+        animerood.style.width = '180px';
+        animerood.style.border = '1px solid #cccccc';
+        
+        animerood2.style.width = '0px';
+        animerood2.style.height = '16px';
+        let value  = 0;//ローニング以下略
+        let random;
+        function va() {
+          if(value < 100) {
+            random = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            animerood2.style.backgroundColor = random;
+            animerood2.style.width = ++value + '%';
+            setTimeout(va, 100);
+          } 
+          else {
+            animeload.style.display = 'none';
+          }
+        }
+        const musicmp3 = ['mp3/Nyan Cat.mp3', 'mp3/Sword Art Online Alicization Opening - ADAMAS.mp3','mp3/Log Horizon Opening - database.mp3','mp3/Bakemonogatari Opening 4 - Ren.mp3'];
+        const music = new Audio(musicmp3[0]);
+        const divaw = document.createElement('div');
+        const musictitle = document.createElement('h1');
+        const musicfont = ['Nyan Cat', 'ソードアートオンラインアリシゼーションオープニング','ログ・ホライズンnOpening','化物語オープニング4-レンアイサーキュレーション'];
+        const divimg = document.createElement('div');
+        const imgor = document.createElement('img');
+        const giff = ['images/Nyan Cat.gif', 'images/ソードアートオンラインアリシゼーションオープニング.gif','images/ログ・ホライズンnOpening.gif','images/化物語オープニング4-レンアイサーキュレーション.gif'];
+           
+        const buttonmon = document.createElement("button");
+        const buttonmon2 = document.createElement("button");
+        let i=0;//曲選択以下略
+        buttonmon.onclick = () => {
+          imgor.animate({
+          opacity: [0, 1]
+          }, 950)
+          if(i <= 0) {
+            i = 3;
+          }
+          else {
+               i--;
+          }
+          music.src = musicmp3[i];
+          musictitle.innerHTML = musicfont[i];
+          imgor.src = giff[i];
+        }//曲選択の画像以下略
+        buttonmon2.onclick = () => {
+          imgor.animate({
+          opacity: [0, 1]
+          }, 950)
+          if(i == giff.length-1) {
+            i = 0
+          }
+          else {
+              i++;
+          }
+          music.src = musicmp3[i];
+          musictitle.innerHTML = musicfont[i];
+          imgor.src = giff[i];
+        }
+        imgor.src = giff[0];
+        const divor = document.createElement('div');
+        const buttonor = document.createElement("button");
+        const buttonor2 = document.createElement("button");
+        musictitle.innerHTML = musicfont[0];
+        musictitle.style.color = 'rgb(12, 24, 333)';
+        //音楽再生した時のボタン非表示以下略
+        buttonor.onclick = () => {
+          music.play();
+          buttonmon.style.display = 'none';
+          buttonmon2.style.display = 'none';
+          buttonor.style.display = 'none';
+          buttonor2.style.display = 'block';
+        }//再生か停止か以下略
+        buttonor.innerHTML = "再生";
+        buttonor.style.backgroundColor = 'rgb(12, 334, 33)';
+        buttonor.style.color = 'rgb(12, 24, 333)';
+        buttonor2.onclick = () => {
+          music.pause();
+          buttonmon.style.display = 'block';
+          buttonmon2.style.display = 'block';
+          buttonor.style.display = 'block';
+          buttonor2.style.display = 'none';
+        }
+        buttonor2.innerHTML = "停止";
+        buttonor2.style.backgroundColor = 'rgb(12, 24, 313)';
+        buttonor2.style.color = 'rgb(32, 334, 333)';
+        buttonor2.style.display = 'none';
+        document.body.style.backgroundColor = 'rgb(22, 234, 213)';
+        divaw.style.display = 'block';
+        divaw.style.textAlign = 'center';
+        const divvolume = document.createElement('div');
+        const volumep = document.createElement('p');
+        const volumeinput = document.createElement('input');
+        const volumespan = document.createElement('span');
+        const volumemuted = document.createElement('img');
+        volumep.innerHTML = '音量';
+        volumespan.innerHTML = '0.5';
+        volumeinput.type = 'range';
+        volumeinput.min = '0';
+        volumeinput.max = '1';
+        volumeinput.step = '0.1';
+        volumeinput.value = 'o.5';
+        music.muted = false;
+        volumemuted.src = 'images/volume0.png';
+        divvolume.style.textAlign = 'center';
+        music.volume = volumeinput.value;//音量調整以下略
+        volumeinput.addEventListener("change", function(){
+            music.volume = volumeinput.value;
+            volumespan.textContent = volumeinput.value;
+        }, false);
+        //ミュートオンオフ以下略
+        volumemuted.addEventListener("click", function(){
+          if(music.muted === false) {
+             volumemuted.src = 'images/volume1.png';
+             music.muted = true;
+          }
+          else {
+            volumemuted.src = 'images/volume0.png';
+            music.muted = false;
+          }
+        }, false)
+        volumep.appendChild(volumeinput);
+        volumep.appendChild(volumespan);
+        volumep.appendChild(volumemuted);
+        divvolume.appendChild(volumep);
+        
+
+        const divloop = document.createElement('div');
+        const buttonloop = document.createElement('button');
+        buttonloop.innerHTML = 'ループON';
+        music.loop = false;
+        buttonloop.style.color = '#000';
+        buttonloop.style.backgroundColor = '#fff100';
+        buttonloop.style.borderBottom = '5px solid #ccc100';
+        buttonloop.style.marginTop = '3px';
+        buttonloop.style.background = '#fff20a';
+        divloop.style.textAlign = 'center';
+
+        divloop.appendChild(buttonloop);
+        //音楽ループさせるか以下略
+        buttonloop.addEventListener("click", function(){
+          if(music.loop === false) {
+            music.loop = true;
+            buttonloop.innerHTML = 'ループOFF';
+          }
+          else {
+            music.loop = false;
+            buttonloop.innerHTML = 'ループON';
+          }
+        }, false)
+
+        window.onload = medeiaresize(), va();
+        window.onresize = medeiaresize;
+        //メディクリレスポンシブ以下略
+        function medeiaresize() {
+        if( window.matchMedia("screen and (max-width:767px)").matches){
+        musictitle.style.fontSize = '120%';
+
+	      imgor.style.width = '70%';
+        imgor.style.padding = '2vw';
+
+        buttonmon.style.color = 'transparent';
+        buttonmon.style.outline = 'none';
+        buttonmon.style.width = '5px';
+        buttonmon.style.display = 'block';
+        buttonmon.style.height = '500px auto';
+        buttonmon.style.borderRadius = '10px 100px / 120px';
+        buttonmon.style.backgroundColor = '#ccc';
+
+        buttonmon2.style.color = 'transparent';
+        buttonmon2.style.outline = 'none';
+        buttonmon2.style.width = '5px';
+        buttonmon2.style.display = 'block';
+        buttonmon2.style.height = '500px auto';
+        buttonmon2.style.borderRadius = '100px 10px / 100px 10px';
+        buttonmon2.style.backgroundColor = '#ccc';
+        
+        divimg.style.overflow = 'hidden';
+        divimg.style.display = 'flex';
+        divimg.style.width = '100%';
+        divimg.style.height = '100%';
+        divimg.style.flex = 'none';
+        divimg.style.alignItems = 'cneter';
+        divimg.style.justifyContent = 'center';
+
+        divor.style.display = 'grid';
+        divor.style.gridTemplate = '1fr 1fr 1fr';
+        divor.style.gap = '20%';
+        divor.style.marginTop = '10%';
+        divor.style.textAlign = 'center';
+        divor.style.marginLeft = '45%';
+        divor.style.marginRight = '45%';
+	      }
+        else if( window.matchMedia("screen and (min-width:768px) and (max-width:1279px)").matches){
+        musictitle.style.fontSize = '170%';
+
+        imgor.style.width = '50%';
+        imgor.style.padding = '2vw';
+
+        buttonmon.style.color = 'transparent';
+        buttonmon.style.outline = 'none';
+        buttonmon.style.width = '5px';
+        buttonmon.style.display = 'block';
+        buttonmon.style.height = '500px auto';
+        buttonmon.style.borderRadius = '10px 100px / 120px';
+        buttonmon.style.backgroundColor = '#ccc';
+
+        buttonmon2.style.color = 'transparent';
+        buttonmon2.style.outline = 'none';
+        buttonmon2.style.width = '5px';
+        buttonmon2.style.display = 'block';
+        buttonmon2.style.height = '500px auto';
+        buttonmon2.style.borderRadius = '100px 10px / 100px 10px';
+        buttonmon2.style.backgroundColor = '#ccc';
+        
+        divimg.style.overflow = 'hidden';
+        divimg.style.display = 'flex';
+        divimg.style.width = '100%';
+        divimg.style.height = '100%';
+        divimg.style.flex = 'none';
+        divimg.style.alignItems = 'cneter';
+        divimg.style.justifyContent = 'center';
+
+        divor.style.display = 'grid';
+        divor.style.gridTemplate = '1fr 1fr 1fr';
+        divor.style.gap = '20%';
+        divor.style.marginTop = '10%';
+        divor.style.marginLeft = '45%';
+        divor.style.marginRight = '45%';
+	      }
+        else {
+          musictitle.style.fontSize = '200%';
+
+          imgor.style.width = '30%';
+          imgor.style.padding = '2vw';
+
+          buttonmon.style.color = 'transparent';
+          buttonmon.style.outline = 'none';
+          buttonmon.style.width = '5px';
+          buttonmon.style.height = '700px auto';
+          buttonmon.style.display = 'block';
+          buttonmon.style.borderRadius = '10px 100px / 120px';
+          buttonmon.style.backgroundColor = '#ccc'; 
+        
+
+          buttonmon2.style.color = 'transparent';
+          buttonmon2.style.outline = 'none';
+          buttonmon2.style.width = '5px';
+          buttonmon2.style.height = '700px auto';
+          buttonmon2.style.display = 'block';
+          buttonmon2.style.borderRadius = '100px 10px / 100px 10px';
+          buttonmon2.style.backgroundColor = '#ccc';
+
+          divimg.style.overflow = 'hidden';
+          divimg.style.display = 'flex';
+          divimg.style.width = '100%';
+          divimg.style.height = '100%';
+          divimg.style.flex = 'none';
+          divimg.style.alignItems = 'cneter';
+          divimg.style.justifyContent = 'center';
+
+          divor.style.display = 'grid';
+          divor.style.gridTemplate = '1fr 1fr 1fr';
+          divor.style.gap = '10%';
+          divor.style.marginTop = '0';
+          divor.style.marginLeft = '45%';
+          divor.style.marginRight = '45%';
+        }
+        }
+        divaw.appendChild(musictitle);
+        divimg.appendChild(buttonmon);
+        divimg.appendChild(imgor);
+        divimg.appendChild(buttonmon2);
+        
+        divor.appendChild(buttonor);
+        divor.appendChild(buttonor2);
+        document.body.appendChild(animeload);
+        document.body.appendChild(divaw);
+        document.body.appendChild(divimg);
+        document.body.appendChild(divor);
+        document.body.appendChild(divvolume);
+        document.body.appendChild(divloop);
+    </script>
+</html>
