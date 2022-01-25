@@ -1,0 +1,81 @@
+@charset "UTF-8";
+html,body,div,header,
+h1,h2,h3,h4,table,tr,th,td,
+img,p,a {
+  margin: 0;
+  padding: 0;
+}
+body{
+background: rgb(113,224,231);
+background: radial-gradient(circle, rgba(113,224,231,0.5634628851540616) 58%, rgba(0,223,255,0.5802696078431373) 77%);
+}
+  .temp_font_size{
+    font-size: 1;
+  }
+  .temp_margin{
+    margin: 3% 3% 3% 3%;
+  }
+.aaaa{
+    text-align: center;
+}
+.title{
+    font-size: 48px;
+}
+h1{
+    font-size: 36px;
+}
+
+.xmas p{
+    position: relative;
+    z-index: 4;
+    margin-left: 30%;
+    font-size: 24px;
+    text-align: justify;
+    line-height: 2;
+}
+.xmas h1{
+    position: relative;
+    z-index: 4;
+}
+.tree{
+    z-index: 1;
+    position: absolute;
+    width: auto;
+    height: auto;
+    text-align: left;
+}
+.sh {
+    z-index: 1;
+    position: absolute;
+    widows: auto;
+    height: auto;
+    right: 0;
+    bottom: 0;
+    margin-right: 10%;
+    margin-bottom: 10%;
+}
+.size{
+    width: 65%;
+}
+.kita{ 
+    width: 100%;
+}
+.party{
+    border: 3px solid black;
+}
+@media screen and (max-width: 959px) {
+    .party{
+        width: 100%;
+    }
+    .xmas p{
+        font-size: 16px;
+    }
+    .kita{
+        width: 100%;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .party{
+        width: 100%;
+    }
+  }

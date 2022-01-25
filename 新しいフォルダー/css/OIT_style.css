@@ -1,0 +1,564 @@
+/*---全体---*/
+html,body,div,header,
+h1,h2,h3,h4,table,tr,th,td,
+img,p,a {
+  margin: 0;
+  padding: 0;
+}
+.OIT_div{
+  text-align: center;
+}
+.wave_left{
+  display: inline-block;
+  margin-right: 1%;
+  font-weight:bold;
+  background:url('../images/ITL/wave-blue.png') center repeat-x;     
+  background-size: 40px;
+  width: 80px;
+}
+.wave_right{
+  display: inline-block;
+  margin-left: 1%;
+  font-weight:bold;
+  background:url('../images/ITL/wave-blue.png') center repeat-x;     
+  background-size: 40px;
+  width: 80px;
+}
+.OIT_h2{
+  display: flex;
+  background-position: center center;
+  font-size: 24px;
+  color: #00bfff;
+}
+.OIT_h2::before,
+.OIT_h2::after {
+  content: '';
+  flex-grow: 1;/* 余白を分け与える */
+  height: 4px;
+  background: #00bfff;
+}
+.OIT_h2::before{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 3%;
+  }
+.OIT_h2::after{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 3%;
+  }
+.temp_font_size{
+  font-size: 1;
+}
+.temp_margin{
+  margin: 3% 3% 3% 3%;
+}
+/*---ヘッダー---*/
+/*---タイトル---*/
+.OIT_h1{
+  font-size: 54px;
+}
+/*---記事1・記事2---*/
+.OIT_table_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.OIT_table1{
+  border-collapse:collapse;
+  max-width: 570px;
+  width: 50%;
+  font-size: 16px;
+  border-right: 2px solid;
+  border-left: 2px solid;
+  margin-right: 0.5%;
+  margin-left: 1%;
+}
+.OIT_table2{
+  border-collapse:collapse;
+  max-width: 570px;
+  width: 50%;
+  font-size: 16px;
+  border-right: 2px solid;
+  border-left: 2px solid;
+  margin-left: 0.5%;
+  margin-right: 1%;
+}
+.OIT_tr_first{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+}
+.OIT_tr{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid;
+}
+.OIT_tr_title1{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid;
+  background: #95CCFF;
+}
+.OIT_tr_title2{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid;
+  background: #95CCFF;
+}
+.OIT_th{
+  min-width: 50px;
+  width: auto;
+  padding: 0px 20px 0px 20px;
+  border-right: 2px solid;
+}
+.OIT_td{
+  min-height: 30px;
+  height: auto;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding-top: 1.5%;
+}
+.OIT_td2{
+  min-height: 30px;
+  height: auto;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding-top: 1.5%;
+}
+/*---記事3---*/
+.OIT_article3_area{
+  display: inline-block;
+}
+.OIT_article3_list{ 
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+}
+.OIT_article3_comment{
+  font-size: 16px;
+  text-align: left;
+  margin: 2.5% 0 2.5% 0;
+  line-height: 200%;
+}
+/*---記事4---*/
+.OIT_article4_area{
+  display: flex;
+}
+.OIT_article4_list{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 400px;
+  width: auto;
+}
+.OIT_article4_comment{
+  font-size: 16px;
+  text-align: left;
+  line-height: 200%;
+}
+.OIT_article_border{
+  border-left: 2px dashed;
+}
+/*---記事5---*/
+.OIT_floor_area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.OIT_floor_1{
+  max-width: 481px;
+  width: auto;
+  margin-right: 1.5%;
+}
+.OIT_floor_2{
+  max-width: 481px;
+  width: auto;
+  margin-left: 1.5%;
+}
+.OIT_box{
+  display: flex;
+  max-width: 485px;
+  width: auto;
+  min-height: 460px;
+  height: auto;
+  margin-top: 2.5%;
+  box-sizing: border-box;
+  border: 2px solid;
+}
+.OIT_comment{
+  min-height: 330px;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  text-align: left;
+  margin: 1% 1% 1% 1%;
+  line-height: 200%;
+}
+.OIT_img_div{
+  min-width: 140px;
+  max-height: 140px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.OIT_img{
+  margin: 1% 1% 1% 1%;
+  max-width: 130px;
+  width: auto;
+  max-height: 130px;
+  height: auto;
+  background-size:contain;
+}
+.OIT_article5_area{
+  border-left: 2px solid;
+}
+.OIT_article5_sub_title{
+  margin: 0;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-bottom: 2px solid;
+}
+@media screen and (max-width: 960px){
+  .ITL_h1{
+    font-size: 46px;
+  }
+  .OIT_div h2{
+    font-size: 24px;
+  }
+  /*---記事1・2---*/
+  .OIT_table_div{
+    display: inline-block;
+  }
+  .OIT_table1{
+    border-collapse:collapse;
+    min-width: 475px;
+    width: auto;
+    font-size: 16px;
+    border-right: 2px solid;
+    border-left: 2px solid;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .OIT_table2{
+    border-collapse:collapse;
+    min-width: 475px;
+    width: auto;
+    font-size: 16px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-left: 2px solid;
+    margin-top: 10%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .OIT_tr_first{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+  }
+  .OIT_tr{
+    display: flex;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 2px solid;
+  }
+  .OIT_tr_title1{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid;
+  }
+  .OIT_tr_title2{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border-top: 0px solid;
+  }
+  .OIT_th{
+    min-width: 50px;
+    width: auto;
+    padding: 0px 20px 0px 20px;
+    border-right: 2px solid;
+  }
+  .OIT_td{
+    min-height: 30px;
+    height: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+  }
+  .OIT_td2{
+    min-height: 30px;
+    height: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+  }
+  /*---記事3---*/
+  
+ 
+  /*---記事4---*/
+  .OIT_article4_area{
+    display: inline-block;
+  }
+  .OIT_article4_list{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 400px;
+    width: auto;
+  }
+  .OIT_article4_comment{
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 5%;
+  }
+  .OIT_article_border{
+    border-left: 2px dashed;
+  }
+    /*---記事5---*/
+    .OIT_floor_area{
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+    }
+    .OIT_floor_1{
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 0;
+      max-width: 500px;
+      width: auto;
+    }
+    .OIT_floor_2{
+      padding-left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      border-left: 0px solid;
+      max-width: 500px;
+      width: auto;
+    }
+    .OIT_box{
+      display: flex;
+      max-width: 485px;
+      width: auto;
+      margin-top: 2.5%;
+      box-sizing: border-box;
+      border: 2px solid;
+    }
+    .OIT_comment{
+      max-width: 350px;
+      min-height: 160px;
+      width: auto;
+      height: auto;
+      font-size: 16px;
+      text-align: left;
+      margin: 1% 1% 1% 1%;
+    }
+    .OIT_img_div{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .OIT_img{
+      margin: 1% 1% 1% 1%;
+      max-width: 130px;
+      width: auto;
+      max-height: 130px;
+      height: auto;
+      background-size:contain;
+    }
+    .OIT_article5_area{
+      border-left: 2px solid;
+    }
+    .OIT_article5_sub_title{
+      margin: 0;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      border-bottom: 2px solid;
+    }
+}
+
+@media screen and (max-width: 480px){
+  .OIT_div h2{
+    font-size: 16px;
+  }
+  /*---記事1・2---*/
+  .OIT_table_div{
+    display: inline-block;
+  }
+  .OIT_table1{
+    border-collapse:collapse;
+    min-width: 380px;
+    width: auto;
+    font-size: 16px;
+    border-right: 2px solid;
+    border-left: 2px solid;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .OIT_table2{
+    border-collapse:collapse;
+    min-width: 380px;
+    width: auto;
+    font-size: 16px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-left: 2px solid;
+    margin-top: 10%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .OIT_tr_first{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+  }
+  .OIT_tr{
+    display: flex;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 2px solid;
+  }
+  .OIT_tr_title1{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid;
+  }
+  .OIT_tr_title2{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border-top: 0px solid;
+  }
+  .OIT_th{
+    min-width: 50px;
+    width: auto;
+    padding: 0px 20px 0px 20px;
+    border-right: 2px solid;
+  }
+  .OIT_td{
+    min-height: 30px;
+    height: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+  }
+  .OIT_td2{
+    min-height: 30px;
+    height: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;;
+  }
+  /*---記事3---*/
+
+  /*---記事4---*/
+  .OIT_article4_area{
+    display: inline-block;
+  }
+  .OIT_article4_list{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 400px;
+    width: auto;
+  }
+  .OIT_article4_comment{
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 5%;
+  }
+  .OIT_article_border{
+    border-left: 2px dashed;
+  }
+    /*---記事5---*/
+    .OIT_floor_area{
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+    }
+    .OIT_floor_1{
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 0;
+      max-width: 500px;
+      width: auto;
+    }
+    .OIT_floor_2{
+      padding-left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      border-left: 0px solid;
+      max-width: 500px;
+      width: auto;
+    }
+    .OIT_box{
+      display: flex;
+      max-width: 485px;
+      width: auto;
+      margin-top: 2.5%;
+      box-sizing: border-box;
+      border: 2px solid;
+    }
+    .OIT_comment{
+      max-width: 350px;
+      min-height: 160px;
+      width: auto;
+      height: auto;
+      font-size: 16px;
+      text-align: left;
+      margin: 1% 1% 1% 1%;
+    }
+    .OIT_img_div{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .OIT_img{
+      margin: 1% 1% 1% 1%;
+      max-width: 130px;
+      width: auto;
+      max-height: 130px;
+      height: auto;
+      background-size:contain;
+    }
+    .OIT_article5_area{
+      border-left: 2px solid;
+    }
+    .OIT_article5_sub_title{
+      margin: 0;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      border-bottom: 2px solid;
+    }
+}

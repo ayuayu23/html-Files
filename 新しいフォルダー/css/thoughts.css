@@ -1,0 +1,53 @@
+/*全体*/
+html,body,div,header,
+h1,h2,h3,h4,table,tr,th,td,
+img,p,a {
+  margin: 0;
+  padding: 0;
+}
+/*area*/
+.area{
+  margin: 3% 3% 3% 3%;
+  display: flex;
+}
+/*title*/
+.title{
+  font-size: 42px;
+  margin-left: 2%; 
+}
+/*text*/
+.text{
+  font-size: 16px;
+  max-width: 45vw;
+  width: auto;
+}
+/*subtitle*/
+.subtitle{
+  font-size: 24px;
+  font-weight: 600;
+}
+/*comment*/
+.comment{
+  
+}
+/*hr*/
+hr{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+/*main_img*/
+.main_img{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20%;
+  content: url(../images/IMG_0190re_s.jpg);
+  width: auto;
+  max-width: 500px;
+  height: auto;
+  max-height: 500px;
+  margin-left: 5%;
+}
+@media screen and (max-width: 960px){
+}
+@media screen and (max-width: 480px){
+}
